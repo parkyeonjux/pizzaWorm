@@ -6,8 +6,12 @@ class Tile {
         this.posY = this.row * tileSize;
     }
 
-    renderTile(bg = 'pink') {
-        ctx.fillStyle = bg;
+     renderTile(bg = '#F3B0C3') {
+        if ((this.col % 2 === 1 && this.row % 2 === 1) || (this.col % 2 === 0 && this.row % 2 === 0)) {
+            ctx.fillStyle = '#CBAACB'; 
+        } else {
+            ctx.fillStyle = bg; 
+        }
         ctx.fillRect(this.posX, this.posY, tileSize, tileSize);
     }
 
